@@ -12,7 +12,7 @@ const OrderSummary = () => {
   const [state, setState] = useState("");
   const [phone, setPhone] = useState("");
   const { state } = useAuth();
-  const username = state.user?.username;
+  const username = state.user?.username || "cuatro";
   const setDelivery = (type) => {
     setDeliveryType(type);
   };
