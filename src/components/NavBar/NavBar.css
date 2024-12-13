@@ -170,3 +170,46 @@ body {
   }
 }
 
+.nav-icons button.logout-button {
+  background-color: #d94e4e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-icons button.logout-button:hover {
+  background-color: #b83c3c;
+}
+
+.nav-icons span {
+  margin-right: 10px; /* Separar el nombre de usuario del botón */
+  color: #fff;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-icons button {
+  margin-left: auto; /* Mover el botón a la derecha */
+}
+
+@media (max-width: 768px) {
+  .nav-icons {
+    flex-direction: column; /* Cambiar a diseño vertical */
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .nav-icons button.logout-button {
+    width: 100%; /* Hacer el botón más grande en pantallas pequeñas */
+  }
+}
+
