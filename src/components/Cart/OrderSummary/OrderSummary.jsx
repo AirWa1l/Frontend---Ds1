@@ -11,11 +11,11 @@ const OrderSummary = () => {
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [phone, setPhone] = useState("");
-  const { state } = useAuth();
-  const username = state.user?.username || "cuatro";
-  const setDelivery = (type) => {
-    setDeliveryType(type);
-  };
+  const user = JSON.parse(localStorage.getItem("user"));
+  const username = user.username;
+  //const setDelivery = (type) => {
+    //setDeliveryType(type);
+  //};
   
    const checkOut = async () => {
     // Validar que todos los campos estén completos
