@@ -91,27 +91,24 @@ const useAuth = () => {
 
   const logout = async () => {
     try {
-      const response = await fetch("https://unizone-backend-server.onrender.com/api/logout/", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "cors",
-        credentials: "include",
-      });
-
-      if (!response.ok) {
-        throw new Error("Hubo un problema al cerrar sesión.");
-      }
-
+      // Eliminar el usuario del localStorage
       localStorage.removeItem("user");
+      console.log("Usuario eliminado de localStorage.");
+  
+      // Despachar acción para actualizar el estado
       dispatch({ type: actions.LOGOUT });
       toast.success("Sesión cerrada correctamente");
+  
+      // Verificación del estado después de logout
+      console.log("Estado después de cerrar sesión:", state);
+  
     } catch (error) {
       console.error("Error al cerrar sesión:", error);
       toast.error("No se pudo cerrar sesión. Intenta de nuevo.");
     }
   };
+  
+  
 
   return { state, register, login, logout };
 };
