@@ -7,7 +7,7 @@ const ShopFooter = () => {
   return (
     <div className="sub-container">
       <div className="useful-links">
-        <h2 className="logo-text">LOGO</h2>
+        <h2 className="logo-text">UNIZONE 2024</h2>
         <ul className="useful-details">
           <li>Socials</li>
         </ul>
