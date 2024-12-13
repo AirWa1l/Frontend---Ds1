@@ -28,7 +28,7 @@ const OrderSummary = () => {
     const payload = {
   cart: store.state.cart.map(item => ({
     name: item.name,
-    price: item.price,
+    price: Math.round(item.price),
     quantity: item.quantity,
   })),
   address,
