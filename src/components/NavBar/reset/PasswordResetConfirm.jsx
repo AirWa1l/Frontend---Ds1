@@ -47,20 +47,59 @@ const PasswordResetConfirm = () => {
     };
 
     return (
-        <div>
-            <h2>Restablecer Contraseña</h2>
+        <div
+            style={{
+                backgroundColor: "#d3d3d3", // Fondo claro
+                padding: "2rem",
+                borderRadius: "10px",
+                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                width: "100%",
+                maxWidth: "400px",
+                margin: "auto",
+                marginTop: "10vh",
+                textAlign: "left",
+            }}
+        >
+            <h2 style={{ fontSize: "1.5rem", color: "#000", marginBottom: "1rem" }}>
+                Restablecer Contraseña
+            </h2>
             <form onSubmit={handleSubmit}>
-                <label>
-                    Nueva contraseña:
+                <label style={{ display: "block", marginBottom: "1rem", textAlign: "left" }}>
+                    <span style={{ fontSize: "0.9rem", color: "#000" }}>Nueva contraseña:</span>
                     <input
                         type="password"
                         value={newPassword}
                         onChange={(e) => setNewPassword(e.target.value)}
                         required
                         placeholder="Ingresa tu nueva contraseña"
+                        style={{
+                            display: "block",
+                            width: "100%",
+                            padding: "0.8rem",
+                            fontSize: "1rem",
+                            marginTop: "0.5rem",
+                            border: "1px solid #ccc",
+                            borderRadius: "5px",
+                            boxSizing: "border-box",
+                        }}
                     />
                 </label>
-                <button type="submit">Restablecer contraseña</button>
+                <button
+                    type="submit"
+                    style={{
+                        backgroundColor: "#6c63ff", // Botón de color llamativo
+                        color: "#fff",
+                        padding: "0.8rem 1.5rem",
+                        fontSize: "1rem",
+                        border: "none",
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                        marginTop: "1rem",
+                        width: "100%",
+                    }}
+                >
+                    Restablecer contraseña
+                </button>
             </form>
         </div>
     );
