@@ -86,7 +86,7 @@ function App() {
                 <Route path="/login" element={<LoginView />} />
                 <Route path="/register" element={<RegisterView />} />
                 <Route path="/password_reset" element={<PasswordResetRequest />} />
-                <Route path="/reset/:uidb64/:token" component={PasswordResetConfirm} />
+                <Route path="/password-reset/confirm" element={<PasswordResetConfirm />} />
                 <Route path="/cart" element={<CartView />} />
                 <Route path="/delivery" element={<DeliveryView />} />
                 <Route path="*" element={<ErrorView />} />
