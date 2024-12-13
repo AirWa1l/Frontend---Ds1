@@ -8,9 +8,7 @@ const ShopFooter = () => {
     <div className="sub-container">
       <div className="useful-links">
         <h2 className="logo-text">UNIZONE 2024</h2>
-        <ul className="useful-details">
-          <li>Socials</li>
-        </ul>
+        
       </div>
       <div className="bottom-section">
         <div className="bottom-section-left">
