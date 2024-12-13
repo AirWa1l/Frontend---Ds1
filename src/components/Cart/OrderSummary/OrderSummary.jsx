@@ -12,7 +12,8 @@ const OrderSummary = () => {
   const [state, setState] = useState("");
   const [phone, setPhone] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
-  const username = user.username;
+  //const username = user.username;
+  const username = user ? user.username : "invitado";
   //const setDelivery = (type) => {
     //setDeliveryType(type);
   //};
