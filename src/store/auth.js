@@ -27,7 +27,7 @@ const useAuth = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const register = async (userInfo) => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/register/", {
+      const response = await fetch("https://unizone-backend-server.onrender.com/api/register/", {
           method: "POST",
           headers: {
               "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const useAuth = () => {
 
   const login = async (userInfo) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/login/`, {
+      const response = await fetch(`https://unizone-backend-server.onrender.com/api/login/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
