@@ -19,6 +19,12 @@ const OrderSummary = () => {
   //};
   
    const checkOut = async () => {
+     if (username == 'invitado') {
+      // Si no está autenticado, redirigir al login
+      toast.error("Necesitas iniciar sesión para continuar con el pago.");
+      window.location.href = "/login"; // Redirigir a login
+      return;
+    }
     // Validar que todos los campos estén completos
     if (!address || !city || !country || !state || !phone ) {
       toast.error("Por favor completa todos los campos.");
