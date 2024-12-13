@@ -13,16 +13,43 @@ const OrderSummary = () => {
   const setDelivery = (type) => {
     setDeliveryType(type);
   };
-  const checkOut = async () => {
-    let payload = {
-     
-      costAfterDelieveryRate:
-        store.state.cartTotal 
+  
+   const checkOut = async () => {
+    // Validar que todos los campos estén completos
+    if (!address || !city || !country || !state || !phone ) {
+      toast.error("Por favor completa todos los campos.");
+      return;
+    }
+
+    // Crear el payload
+    const payload = {
+      cart: store.state.cart.map(item => ({
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+      email,
     };
 
-    const response = await store.confirmOrder(payload);
-    if (response.showRegisterLogin) {
-      modal.openModal();
+    try {
+      const response = await fetch("https://unizone-backend-server.onrender.com/simulate-purchase/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        toast.success(data.message);
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.error || "Error al procesar la compra.");
+      }
+    } catch (error) {
+      toast.error("Ocurrió un error al conectar con el servidor.");
+      console.error("Error:", error);
     }
   };
   return (
