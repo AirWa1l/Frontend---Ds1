@@ -15,13 +15,9 @@ const OrderSummary = () => {
   };
   const checkOut = async () => {
     let payload = {
-      DeliveryType: deliveryType,
-      DeliveryTypeCost: deliveryType == "Standard" ? 5 : 10,
+     
       costAfterDelieveryRate:
-        store.state.cartTotal + (deliveryType == "Standard" ? 5 : 10),
-      promoCode: "",
-      phoneNumber: phone,
-      user_id: auth.state.user?.id,
+        store.state.cartTotal 
     };
 
     const response = await store.confirmOrder(payload);
