@@ -115,7 +115,7 @@ const OrderSummary = () => {
             <h4>
               $
               {store.state.cart.length > 0
-                ? store.state.cartTotal + (deliveryType === "Standard" ? 5 : 10)
+                ? store.state.cartTotal 
                 : 0}
             </h4>
           </div>
