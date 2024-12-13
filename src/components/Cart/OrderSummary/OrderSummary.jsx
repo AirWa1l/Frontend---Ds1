@@ -47,20 +47,7 @@ const OrderSummary = () => {
             </h3>
           </div>
 
-          <div className="shipping">
-            <h4>Shipping ({store.state.cartQuantity})</h4>
-          </div>
-
-          <div className="enter-promo">
-            <input className="select-dropdown" type="text" />
-            <button
-              className="flat-button apply-promo"
-              disabled={store.state.cartQuantity > 0 ? false : true}
-            >
-              Apply
-            </button>
-          </div>
-
+          
           {/* Campos de información de contacto */}
           <div className="promo-code">
             <h4>Información de contacto</h4>
