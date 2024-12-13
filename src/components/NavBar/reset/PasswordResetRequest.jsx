@@ -23,7 +23,7 @@ const PasswordResetRequest = () => {
             // Agregar console.log para depuración
             console.log("Datos enviados al servidor:", requestData);
 
-            const response = await fetch("http://127.0.0.1:8000/api/password-reset/", requestData);
+            const response = await fetch("https://unizone-backend-server.onrender.com/api/password-reset/", requestData);
 
             if (!response.ok) {
                 const errorData = await response.json();
