@@ -33,9 +33,8 @@ const LoginForm = () => {
         setIsLoading(true); // Activar estado de carga
         try {
             await login(formData); // Llamar a la función de login que conecta con el backend
-            navigate("/"); // Redirigir al usuario tras el login exitoso
-            window.location.href = "/";
-        window.location.reload();
+            window.location.reload();
+            navigate("/");
         } catch (error) {
             toast.error("Hubo un problema al iniciar sesión, intenta de nuevo.");
         }
