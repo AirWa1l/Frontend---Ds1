@@ -83,6 +83,7 @@ const useAuth = () => {
         dispatch({ type: actions.SET_USER, user });
         localStorage.setItem("user", JSON.stringify(user));
         toast.success("Inicio de sesión exitoso");
+        window.location.reload();
       } else {
         toast.error("Hubo un problema al iniciar sesión, intenta de nuevo");
       }
