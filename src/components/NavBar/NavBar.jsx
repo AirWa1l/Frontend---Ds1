@@ -104,5 +104,3 @@ const NavBar = ({ onSearch }) => {
 };
 
 export default NavBar;
-
-  
