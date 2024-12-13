@@ -221,7 +221,7 @@ const useStore = () => {
     dispatch({ type: actions.CLEAR_CART });
   };
   const getProducts = () => {
-    fetch(`http://127.0.0.1:8000/api/products/`)
+    fetch(`https://unizone-backend-server.onrender.com/api/products/`)
       .then(async (response) => {
         const data = await response.json();
         let modifiedData = data.map((product) => {
