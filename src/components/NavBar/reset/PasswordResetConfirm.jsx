@@ -30,7 +30,7 @@ const PasswordResetConfirm = () => {
                 body: JSON.stringify(body), // Convertir el cuerpo a JSON
             };
 
-            const response = await fetch("http://127.0.0.1:8000/api/password-reset/confirm/", requestData);
+            const response = await fetch("https://unizone-backend-server.onrender.com/api/password-reset/confirm/", requestData);
 
             if (!response.ok) {
                 const errorData = await response.json();
