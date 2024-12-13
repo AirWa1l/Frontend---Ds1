@@ -1,0 +1,135 @@
+#rbody {
+    background: linear-gradient(to right,#4E4AD9, #4B0082);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 2%;
+}
+
+#rcontainer {
+    display: flex;
+    flex-direction: column; /* Ajustar en columnas si es necesario */
+    width: 110%; /* Reducir el ancho */
+    max-width: 1200px; /* Limitar el ancho máximo */
+    max-height: 90vh; /* Limitar el alto máximo */
+    background-color: rgba(255, 255, 255, 0.9); /* Ajustar la opacidad para mejor visibilidad */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Agregar scroll vertical */
+    overflow-x: hidden;
+}
+
+#presentation {
+    width: 97%; /* Ajustar para que ocupe el espacio necesario */
+    padding: 20px; /* Reducir el padding */
+    background-color: #6C72D9;
+    color: #0D0D0D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; /* Reducir la fuente */
+    font-weight: bold;
+    text-align: center;
+}
+
+#rform {
+    width: 93%;
+    padding: 30px 40px;
+    color: #0D0D0D;
+}
+
+#rform h1 {
+    font-size: 36px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#rinput-box {
+    position: relative;
+    margin: 10px 0;
+}
+
+#rinput-box input {
+    width: 80%;
+    height: 45px;
+    background: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    color: #23008d;
+    outline: none;
+    margin: 0 10%;
+}
+#rinput-box select{
+    width: 82.25%;
+    height: 45px;
+    background: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    color: #23008d;
+    outline: none;
+    margin: 0 10%;
+}
+#rinput-box label {
+    display: block; /* Hace que el label ocupe una línea completa */
+    margin: 0 10%;
+    margin-bottom: 8px; /* Espacio entre el label y el select */
+    font-size: 20px; /* Tamaño de la fuente */
+    color: #000000; /* Color del texto */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+#rinput-box input::placeholder {
+    color: #777;
+}
+
+#country-dropdown {
+    appearance: none;
+    background: #f0f0f0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23008dd5' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'/%3E%3C/svg%3E") no-repeat right 10px center;
+    padding-right: 30px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+}
+
+#login-link {
+    text-align: center; /* Centrar el enlace */
+    margin-top: 20px; /* Espaciado superior */
+    margin-bottom: 15px;
+}
+
+#already-have-account {
+    font-size: 14px; /* Tamaño de fuente */
+    color: #4E4AD9; /* Color que combine con tu diseño */
+    text-decoration: none; /* Quitar subrayado */
+    transition: color 0.3s; /* Transición para efecto hover */
+}
+
+#already-have-account:hover {
+    color: #3b0ca8; /* Color en hover */
+    text-decoration: underline; /* Subrayar en hover */
+}
+
+#button {
+    width: 82.25%;
+    height: 45px;
+    background: #4E4AD9;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    margin: 0 10%;
+}
+
+#button:hover {
+    background-color: #3b0ca8;
+}

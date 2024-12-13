@@ -1,0 +1,71 @@
+/* Contenedor de los elementos internos */
+.no-results-container {
+    position: fixed;
+    top: 0; /* Posición en la parte superior */
+    margin: 2.2%;
+    margin-left: 10%;
+    margin-right: 18%;
+    left: 0; /* Anclar al inicio horizontal */
+    width: 72%; /* Ocupa el ancho calculado */
+    z-index: 1000; /* Sobre otros elementos */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    display: flex;
+    flex-direction: column; /* Elementos en columna */
+    align-items: left; /* Centrado horizontal */
+  }
+  
+  /* Estilo del mensaje */
+  .no-results-message {
+    font-size: 18px;
+    color: #f00; /* Rojo para destacar */
+    padding: 10px 20px;
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #f00; /* Borde rojo */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center; /* Centrar el texto */
+  }
+  
+  /* Responsividad: pantallas medianas (tabletas) */
+  @media (max-width: 1024px) {
+    .no-results-container {
+      margin-left: 5%; /* Ajustar márgenes */
+      margin-right: 5%;
+      width: 90%; /* Aumentar el ancho */
+    }
+  
+    .no-results-message {
+      font-size: 16px; /* Reducir tamaño de fuente */
+      padding: 8px 15px; /* Ajustar espacio interno */
+    }
+  }
+  
+  /* Responsividad: pantallas pequeñas (móviles) */
+  @media (max-width: 768px) {
+    .no-results-container {
+      margin: 2%; /* Reducir márgenes */
+      width: 96%; /* Ocupa casi todo el ancho */
+    }
+  
+    .no-results-message {
+      font-size: 14px; /* Texto más pequeño */
+      padding: 6px 10px; /* Espaciado reducido */
+      margin-bottom: 8px; /* Espacio entre elementos */
+    }
+  }
+  
+  /* Responsividad: pantallas muy pequeñas (móviles compactos) */
+  @media (max-width: 480px) {
+    .no-results-container {
+      margin: 1%; /* Mínimos márgenes */
+      width: 98%; /* Casi todo el ancho */
+      top: 0; /* Asegurar que se mantenga arriba */
+    }
+  
+    .no-results-message {
+      font-size: 12px; /* Texto aún más pequeño */
+      padding: 5px 8px; /* Reducir más espaciado */
+    }
+  }
+  
+ 
