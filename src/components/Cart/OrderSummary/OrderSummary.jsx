@@ -72,7 +72,16 @@ const OrderSummary = () => {
                 onChange={(e) => setCity(e.target.value)}
               />
             </div>
-
+             <div>
+              <label htmlFor="state">Estado</label>
+              <input
+                id="state"
+                className="select-dropdown"
+                type="text"
+                placeholder="Ingrese su estado"
+                onChange={(e) => setState(e.target.value)}
+              />
+            </div>
             <div>
               <label htmlFor="country">País</label>
               <input
@@ -84,16 +93,7 @@ const OrderSummary = () => {
               />
             </div>
 
-            <div>
-              <label htmlFor="state">Estado</label>
-              <input
-                id="state"
-                className="select-dropdown"
-                type="text"
-                placeholder="Ingrese su estado"
-                onChange={(e) => setState(e.target.value)}
-              />
-            </div>
+           
 
             <div>
               <label htmlFor="phone">Teléfono</label>
