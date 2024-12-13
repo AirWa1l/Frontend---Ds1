@@ -48,12 +48,7 @@ const OrderSummary = () => {
                 setDelivery(item.target.value);
               }}
             >
-              <option value="Standard" className="select">
-                Standard
-              </option>
-              <option value="Express" className="select">
-                Express
-              </option>
+              
             </select>
           </div>
           <div className="promo-code">
