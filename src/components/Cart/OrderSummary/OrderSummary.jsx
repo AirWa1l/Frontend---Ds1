@@ -2,6 +2,7 @@ import "./OrderSummary.css";
 import { useGlobalContext } from "@/components/GlobalContext/GlobalContext";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import useAuth from "@/store/auth";
 
 const OrderSummary = () => {
   const { store, modal, auth } = useGlobalContext();
@@ -10,6 +11,8 @@ const OrderSummary = () => {
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [phone, setPhone] = useState("");
+  const { state } = useAuth();
+    const username = state.user?.username;
   const setDelivery = (type) => {
     setDeliveryType(type);
   };
@@ -32,6 +35,7 @@ const OrderSummary = () => {
   city,
   state,
   country,
+      username
 };
 
     try {
