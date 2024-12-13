@@ -37,7 +37,7 @@ const OrderSummary = () => {
   country,
   username,
 };
-
+    console.log(payload);
     try {
       const response = await fetch("https://unizone-backend-server.onrender.com/api/simulate-purchase/", {
         method: "POST",
