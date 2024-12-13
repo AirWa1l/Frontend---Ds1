@@ -9,43 +9,45 @@ const OrderSummary = () => {
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
-  const [state, setState] = useState("");
-  const [phone, setPhone] = useState("");
-  const { state } = useAuth();
-  const username = state.user?.username;
+  const [state, setState] = useState(""); // Este es el estado local
+  const { state: authState } = useAuth(); // Renombrado 'state' a 'authState' para evitar conflicto
+  const username = authState.user?.username; // Usar 'authState' en lugar de 'state'
   const setDelivery = (type) => {
     setDeliveryType(type);
   };
-  
-   const checkOut = async () => {
+
+  const checkOut = async () => {
     // Validar que todos los campos estén completos
-    if (!address || !city || !country || !state || !phone ) {
+    if (!address || !city || !country || !state || !phone) {
       toast.error("Por favor completa todos los campos.");
       return;
     }
 
     // Crear el payload
     const payload = {
-  cart: store.state.cart.map(item => ({
-    name: item.name,
-    price: item.price,
-    quantity: item.quantity,
-  })),
-  address,
-  city,
-  state,
-  country,
-  username,
-};
+      cart: store.state.cart.map((item) => ({
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+      address,
+      city,
+      state,
+      country,
+      username,
+    };
     console.log(payload);
     try {
-      const response = await fetch("https://unizone-backend-server.onrender.com/api/simulate-purchase/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        "https://unizone-backend-server.onrender.com/api/simulate-purchase/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -59,6 +61,7 @@ const OrderSummary = () => {
       console.error("Error:", error);
     }
   };
+
   return (
     <div className="is-order-summary">
       <div className="sub-container">
@@ -77,7 +80,6 @@ const OrderSummary = () => {
             </h3>
           </div>
 
-          
           {/* Campos de información de contacto */}
           <div className="promo-code">
             <h4>Información de contacto</h4>
@@ -102,7 +104,7 @@ const OrderSummary = () => {
                 onChange={(e) => setCity(e.target.value)}
               />
             </div>
-             <div>
+            <div>
               <label htmlFor="state">Estado</label>
               <input
                 id="state"
@@ -122,8 +124,6 @@ const OrderSummary = () => {
                 onChange={(e) => setCountry(e.target.value)}
               />
             </div>
-
-           
 
             <div>
               <label htmlFor="phone">Teléfono</label>
@@ -149,7 +149,7 @@ const OrderSummary = () => {
             <h4>
               $
               {store.state.cart.length > 0
-                ? store.state.cartTotal 
+                ? store.state.cartTotal
                 : 0}
             </h4>
           </div>
@@ -159,13 +159,7 @@ const OrderSummary = () => {
             <button
               className="flat-button checkout"
               onClick={() => {
-                if (
-                  address &&
-                  city &&
-                  country &&
-                  state &&
-                  phone.length > 0
-                ) {
+                if (address && city && country && state && phone.length > 0) {
                   checkOut();
                   toast.info("Your order is being processed");
                 } else {
@@ -182,4 +176,5 @@ const OrderSummary = () => {
     </div>
   );
 };
+
 export default OrderSummary;
