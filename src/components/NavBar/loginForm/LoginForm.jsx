@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import './LoginForm.css';
 import { FaUser, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify'; 
-import useAuth from "@/store/auth"; 
+import { toast } from 'react-toastify';
+import useAuth from "@/store/auth";
 
 const LoginForm = () => {
     const { login } = useAuth(); // Obtener la función `login` del store o contexto
