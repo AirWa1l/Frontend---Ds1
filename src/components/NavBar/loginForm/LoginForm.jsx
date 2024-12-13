@@ -33,6 +33,7 @@ const LoginForm = () => {
         setIsLoading(true); // Activar estado de carga
         try {
             await login(formData); // Llamar a la función de login que conecta con el backend
+            navigate("/");
             window.location.reload();
             navigate("/");
         } catch (error) {
