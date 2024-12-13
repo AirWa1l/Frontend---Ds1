@@ -23,13 +23,16 @@ const OrderSummary = () => {
 
     // Crear el payload
     const payload = {
-      cart: store.state.cart.map(item => ({
-        name: item.name,
-        price: item.price,
-        quantity: item.quantity,
-      })),
-      email,
-    };
+  cart: store.state.cart.map(item => ({
+    name: item.name,
+    price: item.price,
+    quantity: item.quantity,
+  })),
+  address,
+  city,
+  state,
+  country,
+};
 
     try {
       const response = await fetch("https://unizone-backend-server.onrender.com/simulate-purchase/", {
