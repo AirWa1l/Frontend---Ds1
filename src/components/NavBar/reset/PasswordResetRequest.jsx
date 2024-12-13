@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import "./password_reset.css";
+//import "./password_reset.css";
 
 const PasswordResetRequest = () => {
     const [email, setEmail] = useState("");
