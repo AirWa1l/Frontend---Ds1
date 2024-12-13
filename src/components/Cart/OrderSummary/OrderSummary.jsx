@@ -35,7 +35,7 @@ const OrderSummary = () => {
 };
 
     try {
-      const response = await fetch("https://unizone-backend-server.onrender.com/simulate-purchase/", {
+      const response = await fetch("https://unizone-backend-server.onrender.com/api/simulate-purchase/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
